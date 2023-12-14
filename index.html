@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <title>Система учета авиарейсов</title>
+    </head>
+    <body>
+        
+        <h1>Система обліку авіарейсів</h1>
+
+
+        <div id="departure-table">
+            <h2>
+                <span onclick="toggleTable('departure')">Таблиця відправлень</span>
+                <button onclick="toggleVisibility('departure')">Приховати/Показати</button>
+            </h2>
+            <table id="departure-list">
+                <!-- Тут буде список відправлень -->
+            </table>
+        </div>
+    
+        <div id="arrival-table">
+            <h2>
+                <span onclick="toggleTable('arrival')">Таблиця прибуття</span>
+                <button onclick="toggleVisibility('arrival')">Приховати/Показати</button>
+            </h2>
+            <table id="arrival-list">
+                <!-- Тут буде список прибуття -->
+            </table>
+        </div>
+
+        <div id="add-flight-form">
+            <h2>Додати новий рейс</h2>
+            <form onsubmit="addFlight(); return false;">
+                <label for="flight-number">Номер рейсу:</label>
+                <input type="text" id="flight-number" required>
+
+                <label for="destination">Місце призначення:</label>
+                <input type="text" id="destination" required>
+
+                <label for="dispatches">Місце відправлення:</label>
+                <input type="text" id="dispatches" required>
+
+                <label for="departure-time">Час відправлення:</label>
+                <input type="datetime-local" id="departure-time" required>
+
+                <label for="arrival-time">Час прибуття:</label>
+                <input type="datetime-local" id="arrival-time" required>
+
+                <label for="flight-type">Тип польоту:</label>
+                <select id="flight-type" required>
+                    <option value="departure">Відправлення</option>
+                    <option value="arrival">Прибуття</option>
+                </select>
+
+                <button type="submit">Додати рейс</button>
+            </form>
+        </div>
+
+        <button id="add-flight-button" onclick="scrollToForm()">Додати рейс</button>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
